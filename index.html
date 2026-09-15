@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Mario Esteban — Front-end developer & web designer</title>
+  <meta name="description" content="Portfolio of Mario Esteban: front-end development and web design, from the mountains of Benguet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" />
+  <style>
+    @font-face {
+      font-family: "Quiapo";
+      src: url("assets/fonts/Quiapo_Free.ttf") format("truetype");
+      font-display: swap;
+    }
+    /* Unlayered, so it wins over the engine's @layer sw defaults. */
+    :root, .sw-root {
+      --sw-bg: #D8C7A3;        /* Natural Hemp */
+      --sw-ink: #1E2522;       /* Deep Mountain Black — 9.4:1 on hemp */
+      --sw-ink-soft: #454B45;  /* 5.4:1 on hemp */
+      --sw-accent: #A52A2A;    /* Cordillera Red */
+      --sw-font-display: "Quiapo", Georgia, serif;
+      --sw-font-body: "DM Sans", system-ui, sans-serif;
+    }
+    /* Red is 4.3:1 on hemp — fine for buttons (white text 7.1:1), too low for small text. */
+    .sw-copy__eyebrow { color: var(--sw-ink); }
+    .sw-btn--primary, .sw-topcta { background: var(--sw-accent); color: #fff; }
+    /* Project list (engine `links`): element selectors, so linkList() markup stays free. */
+    .sw-copy__links { list-style: none; margin: 24px 0 0; padding: 0; pointer-events: auto; }
+    .sw-copy__links li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 12px 0;
+      border-top: 1px solid color-mix(in srgb, var(--sw-ink) 20%, transparent); }
+    .sw-copy__links strong { font-family: var(--sw-font-display); font-weight: 400; font-size: 1.2rem; }
+    .sw-copy__links span { color: var(--sw-ink-soft); font-size: .9rem; }
+    .sw-copy__links a { color: var(--sw-ink); font-weight: 600; font-size: .9rem; text-underline-offset: 3px; }
+    .sw-copy__links a:hover { color: var(--sw-accent); }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="world">
+    <!-- Crawlable mirror of the copy below; the engine hides it on mount. DUMMY DATA. -->
+    <section data-sw-seo>
+      <h1>Mario Esteban, front-end developer & web designer</h1>
+      <p>I design and build careful, fast websites, from the first sketch to the last line of PHP.</p>
+      <h2>Craft: Pattern, grid, and code.</h2>
+      <p>Placeholder: years of experience, focus areas, and the tools I reach for.</p>
+      <h2>Selected work: Built layer by layer.</h2>
+      <ul>
+        <li><a href="#">Project One</a> (Laravel, Alpine.js)</li>
+        <li><a href="#">Project Two</a> (WordPress, custom theme)</li>
+        <li><a href="#">Side Project</a> (Vanilla JS, CSS)</li>
+      </ul>
+      <h2>Contact: Come sit, let's talk.</h2>
+      <p>Placeholder: open to full-time roles and freelance projects.</p>
+      <p><a href="mailto:hello@example.com">Get in touch</a> · <a href="#">Download CV</a></p>
+    </section>
+  </div>
+
+  <script src="scrub-engine.js"></script>
+  <script>
+    mountScrollWorld(document.getElementById('world'), {
+      brand: { name: 'Mario Esteban', href: '#top' },
+      cta: { label: 'Get in touch', href: 'mailto:hello@example.com' },
+      hint: 'scroll to begin',
+      crossfade: 0.08,          // arch A: legs hand off real frames, so a tiny dissolve is enough
+      sections: [
+        {
+          id: 'intro', label: 'Home',
+          still: 'assets/intro.webp', poster: 'assets/intro-poster.webp', clip: 'assets/vid/intro.mp4',
+          scroll: 1.8, linger: 0.4,
+          eyebrow: 'Front-end developer & web designer',
+          title: 'Mario Esteban',
+          body: 'I design and build careful, fast websites, from the first sketch to the last line of PHP.',
+          tags: ['Front-end', 'Web design', 'Full-stack PHP'],
+        },
+        {
+          id: 'craft', label: 'Craft',
+          still: 'assets/craft.webp', poster: 'assets/craft-poster.webp', clip: 'assets/vid/craft.mp4',
+          scroll: 1.6, linger: 0.35,
+          eyebrow: 'Craft',
+          title: 'Pattern, grid, and code.',
+          body: 'Placeholder: years of experience, focus areas, and the tools I reach for.',
+          tags: ['HTML & CSS', 'JavaScript', 'Figma', 'Laravel'],
+        },
+        {
+          id: 'work', label: 'Work',
+          still: 'assets/work.webp', poster: 'assets/work-poster.webp', clip: 'assets/vid/work.mp4',
+          scroll: 2, linger: 0.5,
+          eyebrow: 'Selected work',
+          title: 'Built layer by layer.',
+          links: [
+            { name: 'Project One', stack: 'Laravel, Alpine.js', live: '#', code: '#' },
+            { name: 'Project Two', stack: 'WordPress, custom theme', live: '#' },
+            { name: 'Side Project', stack: 'Vanilla JS, CSS', live: '#', code: '#' },
+          ],
+        },
+        {
+          id: 'contact', label: 'Contact',
+          still: 'assets/contact.webp', poster: 'assets/contact-poster.webp', clip: 'assets/vid/contact.mp4',
+          scroll: 1.6,
+          eyebrow: 'Contact',
+          title: "Come sit, let's talk.",
+          body: 'Placeholder: open to full-time roles and freelance projects.',
+          cta: { primary: { label: 'Get in touch', href: 'mailto:hello@example.com' },
+                 secondary: { label: 'Download CV', href: '#' } },
+        },
+      ],
+      connectors: [],           // arch A: no connectors, the legs are the journey
+    });
+  </script>
+</body>
+</html>
