@@ -1,0 +1,51 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - link "Mario Esteban" [ref=e5] [cursor=pointer]:
+      - /url: "#top"
+    - navigation [ref=e8]:
+      - button "Home" [ref=e9] [cursor=pointer]
+      - button "Craft" [ref=e10] [cursor=pointer]
+      - button "Work" [ref=e11] [cursor=pointer]
+      - button "Contact" [ref=e12] [cursor=pointer]
+    - link "Get in touch" [ref=e13] [cursor=pointer]:
+      - /url: mailto:hello@example.com
+  - generic:
+    - article [ref=e14]:
+      - text: 01 / 04
+      - generic [ref=e15]: Front-end developer & web designer
+      - heading "Mario Esteban" [level=2] [ref=e16]
+      - paragraph [ref=e17]: I design and build careful, fast websites, from the first sketch to the last line of PHP.
+      - list [ref=e18]:
+        - listitem [ref=e19]: Front-end
+        - listitem [ref=e20]: Web design
+        - listitem [ref=e21]: Full-stack PHP
+    - article:
+      - text: 02 / 04
+      - generic: Craft
+      - heading "Where design meets code." [level=2]
+      - paragraph: "Placeholder: years of experience, focus areas, and the tools I reach for."
+      - list:
+        - listitem: HTML & CSS
+        - listitem: JavaScript
+        - listitem: Figma
+        - listitem: Laravel
+    - article:
+      - text: 03 / 04
+      - generic: Selected work
+      - heading "Built layer by layer." [level=2]
+    - article:
+      - text: 04 / 04
+      - generic: Contact
+      - heading "Come sit, let's talk." [level=2]
+      - paragraph: "Placeholder: open to full-time roles and freelance projects."
+      - generic [ref=e22]:
+        - link "Get in touch" [ref=e23] [cursor=pointer]:
+          - /url: mailto:hello@example.com
+        - link "Download CV" [ref=e24] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=e25]:
+    - button "Home" [ref=e26] [cursor=pointer]
+    - button "Craft" [ref=e28] [cursor=pointer]
+    - button "Work" [ref=e30] [cursor=pointer]
+    - button "Contact" [ref=e32] [cursor=pointer]
+  - generic [ref=e34]: scroll to begin

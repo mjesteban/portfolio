@@ -26,6 +26,9 @@
     /* Red is 4.3:1 on hemp — fine for buttons (white text 7.1:1), too low for small text. */
     .sw-copy__eyebrow { color: var(--sw-ink); }
     .sw-btn--primary, .sw-topcta { background: var(--sw-accent); color: #fff; }
+    /* Dusk scenes are dark; a soft scrim keeps the top bar readable over them. */
+    .sw-topbar::after { content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--sw-bg) 92%, transparent) 0%, transparent 100%); }
     /* Project list (engine `links`): element selectors, so linkList() markup stays free. */
     .sw-copy__links { list-style: none; margin: 24px 0 0; padding: 0; pointer-events: auto; }
     .sw-copy__links li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 12px 0;
@@ -63,7 +66,7 @@
       brand: { name: 'Mario Esteban', href: '#top' },
       cta: { label: 'Get in touch', href: 'mailto:hello@example.com' },
       hint: 'scroll to begin',
-      crossfade: 0.08,          // arch A: legs hand off real frames, so a tiny dissolve is enough
+      crossfade: 0.22,          // wider dissolve: seedance re-renders each start frame with a slight zoom
       sections: [
         {
           id: 'intro', label: 'Home',
