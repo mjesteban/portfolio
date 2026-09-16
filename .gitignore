@@ -1,4 +1,5 @@
-.work/
+.work/*
+!.work/finish.sh
 .DS_Store
 .idea/
 .playwright-mcp/
