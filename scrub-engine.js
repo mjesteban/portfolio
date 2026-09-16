@@ -413,9 +413,15 @@ function mountScrollWorld(container, config) {
   // `live` and `code` optional. Rendered inside .sw-copy, so it's clickable only while the
   // section's copy is visible. Run every value through esc().
   function linkList(links) {
-    // TODO(Mario): build the markup, e.g. a <ul class="sw-copy__links"> with one row per project
-    return '';
+    return `<ul class="sw-copy__links">${links.map(l =>
+      `<li><strong>${esc(l.name)}</strong>` +
+      (l.stack ? `<span>${esc(l.stack)}</span>` : '') +
+      (l.live ? link(l.live, 'Live') : '') +
+      (l.code ? link(l.code, 'Code') : '') +
+      `</li>`).join('')}</ul>`;
   }
+  // New tab: this page's whole state is scroll position, and a back-nav restore can't be trusted to land mid-scene.
+  function link(href, label) { return `<a href="${esc(href)}" target="_blank" rel="noopener">${label}</a>`; }
 }
 
 function seedParticles(host, reduce) {
